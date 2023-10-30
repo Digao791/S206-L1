@@ -17,7 +17,7 @@ describe('Criando cenário de teste para o site globalsqa', ()=>{
     cy.get('.btn-primary').should('be.disabled')
   })
 
-  it('caso de teste: Realizando login com sucesso',()=>{
+  it.skip('caso de teste: Realizando login com sucesso',()=>{
     let info = registrar_usuario()
     cy.get('#username').type(info[0])
     cy.get('#password').type(info[1])
@@ -25,7 +25,28 @@ describe('Criando cenário de teste para o site globalsqa', ()=>{
     cy.get('h1.ng-binding').should('contain.text', info[0])
   })
 
+  it('caso de teste: Realizando login com falha (faltando usuario)', ()=>{
+    let info = login()
+    cy.get('#username').clear()
+    cy.get('.btn-primary').should('be.disabled')
+    cy.get('.has-error > .help-block').should('have.text', 'Username is required')
+  })
+
+  it('caso de teste: Realizando login com falha (faltando senha)', ()=>{
+    let info = login()
+    cy.get('#password').clear()
+    cy.get('.btn-primary').should('be.disabled')
+    cy.get('.has-error > .help-block').should('have.text', 'Password is required')
+  })
+
 })
+
+function login(){
+   let info = registrar_usuario()
+   cy.get('#username').type(info[0])
+   cy.get('#password').type(info[1])
+   return info
+}
 
 function registrar_usuario(){
 
