@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: pokemonRunner
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in pokemonRunner
+testUsers  Time elapsed: 0 s  <<< ERROR!
+java.lang.RuntimeException: not found: /pokemon.feature
+
