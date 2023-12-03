@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: Prova.goRestRunner
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.438 s <<< FAILURE! - in Prova.goRestRunner
+testUsers  Time elapsed: 0.437 s  <<< ERROR!
+java.lang.RuntimeException: extraneous input '\r\n\r\n    Examples:' expecting {<EOF>, SCENARIO, SCENARIO_OUTLINE, TAGS, NEWLINE}
+

@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"Prova\/reqres[1:8]","start":1701449137304,"end":1701449138511,"title":"Prova\/reqres[1:8] 13:45:37.304-13:45:38.511 Testando retorno positivo do site"},{"id":2,"group":1,"content":"Prova\/reqres[2:13]","start":1701449138523,"end":1701449138658,"title":"Prova\/reqres[2:13] 13:45:38.523-13:45:38.658 Testando retorno positivo da lista de usuários utilizando o método GET e validando seus tipos"},{"id":3,"group":1,"content":"Prova\/reqres[3.1:35]","start":1701449138666,"end":1701449138744,"title":"Prova\/reqres[3.1:35] 13:45:38.666-13:45:38.744 Testando retorno positivo de um usuário específico utilizando o método GET e validando seus tipos"},{"id":4,"group":1,"content":"Prova\/reqres[3.2:36]","start":1701449138750,"end":1701449138815,"title":"Prova\/reqres[3.2:36] 13:45:38.750-13:45:38.815 Testando retorno positivo de um usuário específico utilizando o método GET e validando seus tipos"},{"id":5,"group":1,"content":"Prova\/reqres[4:38]","start":1701449138822,"end":1701449139321,"title":"Prova\/reqres[4:38] 13:45:38.822-13:45:39.321 Testando a criação positiva de um usuário utilizando o método POST"},{"id":6,"group":1,"content":"Prova\/reqres[5.1:56]","start":1701449139327,"end":1701449139807,"title":"Prova\/reqres[5.1:56] 13:45:39.327-13:45:39.807 Testando a deleção positiva de um usuário utilizando o método DELETE"},{"id":7,"group":1,"content":"Prova\/reqres[5.2:57]","start":1701449139812,"end":1701449140283,"title":"Prova\/reqres[5.2:57] 13:45:39.812-13:45:40.283 Testando a deleção positiva de um usuário utilizando o método DELETE"},{"id":8,"group":1,"content":"Prova\/reqres[6:59]","start":1701449140288,"end":1701449140770,"title":"Prova\/reqres[6:59] 13:45:40.288-13:45:40.770 Testando o registro negativo de um usuário utilizando o método POST"},{"id":9,"group":1,"content":"Prova\/reqres[7.1:77]","start":1701449140775,"end":1701449141266,"title":"Prova\/reqres[7.1:77] 13:45:40.775-13:45:41.266 Testando a atualização de um usuário utilizando o método PUT"},{"id":10,"group":1,"content":"Prova\/reqres[7.2:78]","start":1701449141270,"end":1701449141746,"title":"Prova\/reqres[7.2:78] 13:45:41.270-13:45:41.746 Testando a atualização de um usuário utilizando o método PUT"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
