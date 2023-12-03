@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: Trabalho_Inatel.Trabalho.reqresRunner
+-------------------------------------------------------------------------------
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.556 s - in Trabalho_Inatel.Trabalho.reqresRunner

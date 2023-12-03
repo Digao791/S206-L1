@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"Trabalho_Inatel\/Trabalho\/reqres[1:16]","start":1701639599380,"end":1701639600895,"title":"Trabalho_Inatel\/Trabalho\/reqres[1:16] 18:39:59.380-18:40:00.895 Testando resposta positiva do site"},{"id":2,"group":1,"content":"Trabalho_Inatel\/Trabalho\/reqres[2.1:31]","start":1701639600911,"end":1701639601402,"title":"Trabalho_Inatel\/Trabalho\/reqres[2.1:31] 18:40:00.911-18:40:01.402 Testando retorno POSITIVO dos elementos das Páginas 1 e 2 e testando seus tipos"},{"id":3,"group":1,"content":"Trabalho_Inatel\/Trabalho\/reqres[2.2:32]","start":1701639601409,"end":1701639601868,"title":"Trabalho_Inatel\/Trabalho\/reqres[2.2:32] 18:40:01.409-18:40:01.868 Testando retorno POSITIVO dos elementos das Páginas 1 e 2 e testando seus tipos"},{"id":4,"group":1,"content":"Trabalho_Inatel\/Trabalho\/reqres[3.1:44]","start":1701639601874,"end":1701639601928,"title":"Trabalho_Inatel\/Trabalho\/reqres[3.1:44] 18:40:01.874-18:40:01.928 Testando retorno Positivo dos usuários 1 e 2 e testando seus tipos"},{"id":5,"group":1,"content":"Trabalho_Inatel\/Trabalho\/reqres[3.2:45]","start":1701639601934,"end":1701639601987,"title":"Trabalho_Inatel\/Trabalho\/reqres[3.2:45] 18:40:01.934-18:40:01.987 Testando retorno Positivo dos usuários 1 e 2 e testando seus tipos"},{"id":6,"group":1,"content":"Trabalho_Inatel\/Trabalho\/reqres[4.1:58]","start":1701639601994,"end":1701639602513,"title":"Trabalho_Inatel\/Trabalho\/reqres[4.1:58] 18:40:01.994-18:40:02.513 Criando um novo usuario usando o método POST"},{"id":7,"group":1,"content":"Trabalho_Inatel\/Trabalho\/reqres[4.2:59]","start":1701639602520,"end":1701639602969,"title":"Trabalho_Inatel\/Trabalho\/reqres[4.2:59] 18:40:02.520-18:40:02.969 Criando um novo usuario usando o método POST"},{"id":8,"group":1,"content":"Trabalho_Inatel\/Trabalho\/reqres[5.1:72]","start":1701639602975,"end":1701639603426,"title":"Trabalho_Inatel\/Trabalho\/reqres[5.1:72] 18:40:02.975-18:40:03.426 Atualizando registro de usuários usando PUT"},{"id":9,"group":1,"content":"Trabalho_Inatel\/Trabalho\/reqres[5.2:73]","start":1701639603432,"end":1701639603898,"title":"Trabalho_Inatel\/Trabalho\/reqres[5.2:73] 18:40:03.432-18:40:03.898 Atualizando registro de usuários usando PUT"},{"id":10,"group":1,"content":"Trabalho_Inatel\/Trabalho\/reqres[6.1:84]","start":1701639603903,"end":1701639604372,"title":"Trabalho_Inatel\/Trabalho\/reqres[6.1:84] 18:40:03.903-18:40:04.372 Deletando registro de usuários usando DELETE"},{"id":11,"group":1,"content":"Trabalho_Inatel\/Trabalho\/reqres[6.2:85]","start":1701639604376,"end":1701639604824,"title":"Trabalho_Inatel\/Trabalho\/reqres[6.2:85] 18:40:04.376-18:40:04.824 Deletando registro de usuários usando DELETE"},{"id":12,"group":1,"content":"Trabalho_Inatel\/Trabalho\/reqres[7:87]","start":1701639604830,"end":1701639605290,"title":"Trabalho_Inatel\/Trabalho\/reqres[7:87] 18:40:04.830-18:40:05.290 Registrando um novo usuário utilizando o método POST"},{"id":13,"group":1,"content":"Trabalho_Inatel\/Trabalho\/reqres[8.1:104]","start":1701639605295,"end":1701639605738,"title":"Trabalho_Inatel\/Trabalho\/reqres[8.1:104] 18:40:05.295-18:40:05.738 Testando retorno NEGATIVO de usuários inexistentes"},{"id":14,"group":1,"content":"Trabalho_Inatel\/Trabalho\/reqres[8.2:105]","start":1701639605744,"end":1701639606181,"title":"Trabalho_Inatel\/Trabalho\/reqres[8.2:105] 18:40:05.744-18:40:06.181 Testando retorno NEGATIVO de usuários inexistentes"},{"id":15,"group":1,"content":"Trabalho_Inatel\/Trabalho\/reqres[9:107]","start":1701639606186,"end":1701639606654,"title":"Trabalho_Inatel\/Trabalho\/reqres[9:107] 18:40:06.186-18:40:06.654 Testando um registro INVÁLIDO de um usuário com o método POST"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
