@@ -72,3 +72,42 @@ Scenario Outline: Atualizando registro de usuários usando PUT
     |json_1| user_1 |
     |json_2| user_2 |
 
+Scenario Outline: Deletando registro de usuários usando DELETE
+    Given url base_url
+    And path '/api/users/'
+    And path <user>
+    When method DELETE
+    Then status 204
+
+    Examples:
+    |user|
+    |user_1|
+    |user_2|
+
+Scenario: Registrando um novo usuário utilizando o método POST
+    Given url base_url
+    And path '/api/register'
+    And request registrar_usuario_valido
+    When method POST
+    Then status 200
+
+
+Scenario Outline: Testando retorno NEGATIVO de usuários inexistentes
+    Given url base_url
+    And path '/api/users/'
+    And path <user>
+    When method get
+    Then status 404
+
+    Examples:
+    |user|
+    |user_3|
+    |user_4|
+
+Scenario: Testando um registro INVÁLIDO de um usuário com o método POST
+    Given url base_url
+    And path '/api/register'
+    And request registrar_usuario_invalido
+    When method POST
+    Then status 400
+    And match $.error == "Missing password"
